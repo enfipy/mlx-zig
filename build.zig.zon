@@ -1,0 +1,43 @@
+.{
+    .name = .mlx,
+    .version = "0.1.0",
+    .minimum_zig_version = "0.16.0-dev.2637+6a9510c0e",
+    .dependencies = .{
+        .zig_build_mlx = .{
+            .path = "src/build",
+        },
+        .mlx_c = .{
+            .url = "https://github.com/ml-explore/mlx-c/archive/refs/tags/v0.1.2.tar.gz",
+            .hash = "N-V-__8AAItdCADFBSJyMdnsyUa1VTsM0HxFkQhKStTxjcm4",
+        },
+        .tigercheck_x86_64_linux = .{
+            .url = "https://github.com/enfipy/tigercheck/releases/download/0.1.3/tigercheck-x86_64-linux.zip",
+            .hash = "N-V-__8AAHBuWwCOaVpHlTlUBESaOQv0-8_zAyU0-z_gLk-F",
+            .lazy = true,
+        },
+        .tigercheck_aarch64_linux = .{
+            .url = "https://github.com/enfipy/tigercheck/releases/download/0.1.3/tigercheck-aarch64-linux.zip",
+            .hash = "N-V-__8AAHj6WABtm-wdSgzh-6tsghOTfSpKOxZdy_3CUeRo",
+            .lazy = true,
+        },
+        .tigercheck_aarch64_macos = .{
+            .url = "https://github.com/enfipy/tigercheck/releases/download/0.1.3/tigercheck-aarch64-macos.zip",
+            .hash = "N-V-__8AACghDgBVsDtt96WfDRM3SpZFI2qPUhodsuFzzAew",
+            .lazy = true,
+        },
+    },
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "src",
+        "build",
+        "zig",
+        "assets",
+        "tests",
+        ".github",
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+    },
+    .fingerprint = 0x28d85cc40e747e33,
+}

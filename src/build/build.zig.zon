@@ -1,0 +1,36 @@
+.{
+    .name = .mlx,
+    .version = "0.23.1",
+    .dependencies = .{
+        .mlx = .{
+            .url = "https://github.com/ml-explore/mlx/archive/refs/tags/v0.23.1.tar.gz",
+            .hash = "N-V-__8AALAjZQBVRvOkteMtL9krH9OApuSBXXOb77eEChic",
+        },
+        .fmt = .{
+            .url = "https://github.com/fmtlib/fmt/archive/refs/tags/10.2.1.tar.gz",
+            .hash = "N-V-__8AAC6NMwAvQbscvKb1VaN4g85RA3S5yld-1c0RfXHH",
+        },
+        .doctest = .{
+            .url = "https://github.com/onqtam/doctest/archive/ae7a13539fb71f270b87eb2e874fbac80bc8dda2.tar.gz",
+            .hash = "N-V-__8AABcPNwCWhh21eTJPJzrU7bIhc2EOyRawnmXYXcZE",
+        },
+        .gguflib = .{
+            .url = "https://github.com/antirez/gguf-tools/archive/af7d88d808a7608a33723fba067036202910acb3.tar.gz",
+            .hash = "N-V-__8AANHuAQA0PQeqJTtH8uvWKwDd4gHu9VF2SQV6YRNj",
+        },
+        .json = .{
+            .url = "https://github.com/nlohmann/json/archive/refs/tags/v3.11.3.tar.gz",
+            .hash = "N-V-__8AAPwi1QA62l3pm0hnYBnFKtjqBqXK50MZxfH-Wq8C",
+        },
+        .@"metal-cpp" = .{
+            .url = "https://developer.apple.com/metal/cpp/files/metal-cpp_macOS15_iOS18-beta.zip",
+            .hash = "N-V-__8AALgvEgBDOS_1d3VdduFpJrqLwjkDo3CrqwyP48H7",
+        },
+    },
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "zig-build-mlx.zig",
+    },
+    .fingerprint = 0x28d85cc42038a2ae,
+}

@@ -1,0 +1,22 @@
+.zig-cache/
+zig-cache/
+zig-out/
+zig-pkg/
+
+# macOS
+.DS_Store
+
+# Optional vendored toolchain contents
+/zig/*
+!/zig/download.sh
+!/zig/download.ps1
+!/zig/download.win.ps1
+
+# Local model cache and generated artifacts
+/src/assets/models/*
+!/src/assets/models/.gitkeep
+
+# Generated binaries
+/mlx-zig
+/llm
+/whisper

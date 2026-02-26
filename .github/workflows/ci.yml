@@ -1,0 +1,28 @@
+name: CI
+permissions: {}
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  build-check:
+    runs-on: macos-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install Zig toolchain
+        run: ./zig/download.sh
+
+      - name: Build
+        run: ./zig/zig build
+
+      - name: Test
+        run: ./zig/zig build test
+
+      - name: Tigercheck strict gate
+        run: ./zig/zig build check-strict -Dstyle-path=src/libmlx

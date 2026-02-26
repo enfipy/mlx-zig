@@ -1,0 +1,43 @@
+.{
+    .name = "mlx",
+    .version = "0.23.1",
+
+    // This field is optional.
+    // This is currently advisory only; Zig does not yet do anything
+    // with this value.
+    //.minimum_zig_version = "0.11.0",
+
+    .dependencies = .{
+        // the original MLX repo
+        .mlx = .{
+            .url = "https://github.com/ml-explore/mlx/archive/refs/tags/v0.23.1.tar.gz",
+            .hash = "N-V-__8AALAjZQBVRvOkteMtL9krH9OApuSBXXOb77eEChic",
+        },
+        .fmt = .{
+            .url = "https://github.com/fmtlib/fmt/archive/refs/tags/10.2.1.tar.gz",
+            .hash = "12202f41bb1cbca6f555a37883ce510374b9ca577ed5cd117d71c7bdc2c87380e14d",
+        },
+        .doctest = .{
+            .url = "https://github.com/onqtam/doctest/archive/ae7a13539fb71f270b87eb2e874fbac80bc8dda2.tar.gz",
+            .hash = "122096861db579324f273ad4edb22173610ec916b09e65d85dc644449de2754bf912",
+        },
+        .gguflib = .{
+            .url = "https://github.com/antirez/gguf-tools/archive/af7d88d808a7608a33723fba067036202910acb3.tar.gz",
+            .hash = "1220343d07aa253b47f2ebd62b00dde201eef5517649057a611363e429133aef4c5c",
+        },
+        .json = .{
+            .url = "https://github.com/nlohmann/json/archive/refs/tags/v3.11.3.tar.gz",
+            .hash = "12203ada5de99b48676019c52ad8ea06a5cae74319c5f1fe5aaf020ec9636872f423",
+        },
+        .@"metal-cpp" = .{
+            .url = "https://developer.apple.com/metal/cpp/files/metal-cpp_macOS15_iOS18-beta.zip",
+            .hash = "122043392ff577755d76e16926ba8bc23903a370abab0c8fe3c1fb584e66dbc7e524",
+        },
+    },
+
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "LICENSE",
+    },
+}
