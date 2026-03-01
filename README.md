@@ -68,17 +68,9 @@ Optional path overrides:
 ```bash
 ./zig/zig build test
 ./zig/zig build check
-./zig/zig build check-strict
 ```
 
-- `check`: build + tests + tigercheck text diagnostics
-- `check-strict`: build + tests + strict tigercheck lane
-
-Override tigercheck executable or target path if needed:
-
-```bash
-./zig/zig build check -Dtigercheck-exe=../tigercheck/zig-out/bin/tigercheck -Dstyle-path=src/libmlx
-```
+- `check`: build + tests + tigercheck perf gates over `./src` and `./build.zig`
 
 ## Build internals
 

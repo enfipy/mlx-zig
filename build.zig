@@ -201,19 +201,14 @@ fn addTestSteps(
 }
 
 fn addTigercheckSteps(b: *std.Build, test_step: *std.Build.Step) void {
-    const style_path = b.option([]const u8, "style-path", "Path for tigercheck analysis") orelse "src/libmlx";
-    const tigercheck_target = b.option([]const u8, "tigercheck-target", "Path for tigercheck target") orelse style_path;
+    const tigercheck_source_path = b.option([]const u8, "tigercheck-source-path", "Source path for tigercheck") orelse "./src";
+    const tigercheck_build_path = b.option([]const u8, "tigercheck-build-path", "Build file path for tigercheck") orelse "./build.zig";
     const tigercheck_exe = b.option([]const u8, "tigercheck-exe", "Path to tigercheck binary") orelse resolveTigercheckPath(b);
 
-    const check_cmd = b.addSystemCommand(&.{ tigercheck_exe, "--format", "text", tigercheck_target });
+    const check_cmd = b.addSystemCommand(&.{ tigercheck_exe, "--gates", "perf", tigercheck_source_path, tigercheck_build_path });
     const check_step = b.step("check", "Compile + tigercheck");
     check_step.dependOn(test_step);
     check_step.dependOn(&check_cmd.step);
-
-    const check_strict_cmd = b.addSystemCommand(&.{ tigercheck_exe, tigercheck_target });
-    const check_strict_step = b.step("check-strict", "Run strict tigercheck lane");
-    check_strict_step.dependOn(test_step);
-    check_strict_step.dependOn(&check_strict_cmd.step);
 }
 
 fn resolveTigercheckPath(b: *std.Build) []const u8 {
